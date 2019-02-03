@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './layouts/App.vue'
+import ElementUi from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUi)
 
 require('./bootstrap')
-
-Vue.component(
-    'example-component',
-    require('./components/ExampleComponent.vue').default
-)
 
 const app = new Vue({
     el: '#app',
