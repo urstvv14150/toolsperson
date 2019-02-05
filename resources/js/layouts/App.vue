@@ -1,23 +1,18 @@
 <template>
   <div>
     <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <el-button>默认按钮</el-button>
-        </div>
-        <div class="col-4">
-          <el-button type="primary">主要按钮</el-button>
-        </div>
-        <div class="col-4">
-          <el-button type="success">成功按钮</el-button>
-        </div>
-      </div>
+      <home></home>
+      <router-view></router-view>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 <style>
 </style>
 <script>
-  export default {};
+  import home from "../components/Home";
+  export default {
+    components: {
+      home
+    }
+  };
 </script>
