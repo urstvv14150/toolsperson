@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <home></home>
+      <router-link :to="{name: 'home'}">home</router-link>
+      <router-link :to="{name: 'login'}">login</router-link>
       <router-view></router-view>
     </div>
   </div>
