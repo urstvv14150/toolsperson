@@ -1,12 +1,12 @@
 export default [
     {
         path: '/',
-        name: 'home',
-        component: require('@/components/Home.vue').default
+        name: 'search',
+        component: require('@/components/home/Search.vue').default
     },
     {
-        path: '/login',
-        name: 'login',
-        component: require('@/components/Login.vue').default
+        path: '/submit',
+        name: 'submit',
+        component: require('@/components/home/Submit.vue').default
     }
 ]

@@ -1,0 +1,118 @@
+.mb {
+    margin-bottom: 20px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 6%;
+}
+.dropdown-menu {
+    left: -100px;
+}
+.card-img-top {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+.card-deck .card {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 28%;
+    margin-bottom: 35px;
+    transition: 0.5s;
+}
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+.side_leftitem > div {
+    display: none; /*怪怪的*/
+}
+.card-footer {
+    text-align: center;
+}
+.gotop {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    background: rgb(37, 148, 133);
+    border-radius: 50%;
+    /* border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+    line-height: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.5s;
+}
+.topblock {
+    opacity: 1;
+}
+.alltocenter {
+    display: flex;
+    justify-content: center;
+}
+.alltocentercolumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+    .wantdoit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .gotop {
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        right: 25px;
+        bottom: 25px;
+    }
+    .side_left {
+        position: fixed;
+        width: 100px;
+        height: 800px;
+        background-color: lavender;
+        top: 100px;
+        left: 10px;
+        display: block;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /*border: 1px solid black;     */
+        overflow: hidden;
+    }
+    .side_leftitem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* position:relative; */
+        border-radius: 10px;
+        box-sizing: border-box;
+        /*width: 100px;*/
+        flex-grow: 1;
+        transition: 0.5s;
+        background-color: rgba(200, 200, 200, 0.5);
+        border: 0.5px groove black;
+    }
+    .side_leftitem:hover {
+        background-color: rgba(235, 235, 235, 0.5);
+        cursor: pointer;
+    }
+    .side_leftitem > div {
+        display: block; /*怪怪的*/
+    }
+    .side_leftitem + .side_leftitem {
+        margin-top: 10px;
+    }
+}

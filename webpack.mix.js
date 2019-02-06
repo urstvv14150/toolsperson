@@ -19,11 +19,10 @@ mix.webpackConfig({
  |
  */
 
-mix.js('resources/js/main.js', 'public/js').sass(
-    'resources/sass/app.scss',
-    'public/css'
-)
+mix.js('resources/js/main.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .styles('resources/css/modifycss.css', 'public/css/modifycss.css')
 
-// if (mix.inProduction()) {
-//     mix.version()
-// }
+if (mix.inProduction()) {
+    mix.version()
+}
