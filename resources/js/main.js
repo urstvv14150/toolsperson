@@ -18,5 +18,8 @@ const app = new Vue({
     el: '#app',
     router,
     store,
+    mounted() {
+        store.dispatch('CONTENTS_READ')
+    },
     render: h => h(App)
 })

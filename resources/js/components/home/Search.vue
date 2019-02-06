@@ -9,8 +9,7 @@
           class="form-control mr-sm-2"
           type="search"
           placeholder="Search"
-          aria-label="Search"
-          v-model="search"
+          v-model.trim="search"
         >
         <div>正在搜尋: {{search}}</div>
       </form>
@@ -51,17 +50,17 @@
   </div>
 </template>
 <script>
+  import store from "@/store/index.js";
   export default {
     data: function() {
       return {
-        // content: [],
         search: "",
         loading: false
       };
     },
     computed: {
       content() {
-        return this.$store.state.contents;
+        return store.state.contents;
       },
       typetitle() {
         if (this.search != "") {
