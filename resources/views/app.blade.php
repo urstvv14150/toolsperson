@@ -13,5 +13,6 @@
         <div id="app">
         </div>
         <script src="../js/main.js"></script>
+        <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 </body>
 </html>
