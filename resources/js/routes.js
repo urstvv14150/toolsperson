@@ -10,6 +10,11 @@ export default [
         component: require('@/components/home/Submit.vue').default
     },
     {
+        path: '/detailshow/:id',
+        name: 'detailshow',
+        component: require('@/components/home/DetailShow.vue').default
+    },
+    {
         path: '*',
         redirect: '/'
     }

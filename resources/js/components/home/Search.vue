@@ -78,10 +78,8 @@
     },
     methods: {
       itemclick(index) {
-        console.log(this.content[index]);
         let target = this.content[index];
-        console.log(target);
-        this.$router.push({ name: "detialshow", params: { id: target.id } });
+        this.$router.push({ name: "detailshow", params: { id: target.id } });
       }
     }
   };
