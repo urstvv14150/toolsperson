@@ -21,7 +21,6 @@
     computed: {
       content() {
         return this.$store.state.contents.find(item => {
-          console.log(item);
           return item.id == this.$route.params.id;
         });
       }

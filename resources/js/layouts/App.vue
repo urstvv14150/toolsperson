@@ -2,7 +2,6 @@
   <div
     class="container-fluid"
     id="app"
-    v-scroll="showTop"
   >
     <Navbar></Navbar>
     <div class="row">
@@ -27,7 +26,6 @@
   import Sideleft from "@/components/home/Sideleft.vue";
   import Navbar from "@/components/home/Navbar.vue";
   import Carousel from "@/components/home/Carousel.vue";
-  import Gotop from "@/components/home/Gotop.vue";
 
   export default {
     components: {
