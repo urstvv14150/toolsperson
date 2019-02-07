@@ -6,6 +6,7 @@ import routes from './routes.js'
 import store from './store/index.js'
 import ElementUi from 'element-ui'
 import axios from 'axios'
+import moment from 'moment'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(VueRouter)
