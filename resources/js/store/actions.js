@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-export const CONTENTS_READ = ({ commit }, status) => {
-    console.log(commit)
-    console.log(status)
+export const CONTENTS_READ = context => {
     return axios.get('http://localhost:8888/alldata').then(res => {
-        commit('getcontents', res.data)
+        context.commit('getcontents', res.data)
     })
 }

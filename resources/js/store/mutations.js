@@ -1,18 +1,18 @@
+import moment from 'moment'
+
 export const state = {
-    contents: [],
-    test: '111'
+    contents: []
 }
 
 export const mutations = {
     getcontents(state, data) {
-        // console.log(data[0].title)
-        // for (i = 0; i < data.length; i++) {
-        //     data[i].footer = moment(
-        //         data[i].createdatetime,
-        //         'YYYYMMDD h:mm:ss a'
-        //     ).fromNow()
-        // }
-        // state.contents = data.reverse()
+        let i
+        for (i = 0; i < data.length; i++) {
+            data[i].footer = moment(
+                data[i].createdatetime,
+                'YYYYMMDD h:mm:ss a'
+            ).fromNow()
+        }
         state.contents = data.reverse()
     },
     setcontents(state, data) {

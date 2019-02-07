@@ -10,8 +10,7 @@ export default [
         component: require('@/components/home/Submit.vue').default
     },
     {
-        path: '/test',
-        name: 'test',
-        component: require('@/components/home/Test.vue').default
+        path: '*',
+        redirect: '/'
     }
 ]

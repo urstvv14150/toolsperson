@@ -51,6 +51,8 @@
 </template>
 <script>
   import store from "@/store/index.js";
+  import router from "vue-router";
+
   export default {
     data: function() {
       return {
@@ -76,8 +78,9 @@
     },
     methods: {
       itemclick(index) {
-        // console.log(this.content[index])
+        console.log(this.content[index]);
         let target = this.content[index];
+        console.log(target);
         this.$router.push({ name: "detialshow", params: { id: target.id } });
       }
     }
