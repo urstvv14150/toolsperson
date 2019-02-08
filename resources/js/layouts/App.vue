@@ -12,7 +12,9 @@
         <Carousel></Carousel>
         <div class="row mb">
           <div class="col-12 wantdoit">
-            <router-view></router-view>
+            <transition name="fade">
+              <router-view></router-view>
+            </transition>
           </div>
         </div>
       </div>
@@ -28,7 +30,13 @@
     <Sideleft></Sideleft>
   </div>
 </template>
-<style>
+<style scope>
+  .fade-enter-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter {
+    opacity: 0;
+  }
 </style>
 <script>
   import Vue from "vue";
