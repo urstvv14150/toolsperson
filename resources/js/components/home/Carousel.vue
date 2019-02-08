@@ -24,21 +24,21 @@
         <div class="carousel-item active">
           <img
             class="d-block w-100"
-            src="https://picsum.photos/1600/300/?random=1"
+            src="https://picsum.photos/2000/400/?random=1"
             alt="First slide"
           >
         </div>
         <div class="carousel-item">
           <img
             class="d-block w-100"
-            src="https://picsum.photos/1600/300/?random=2"
+            src="https://picsum.photos/2000/400/?random=2"
             alt="Second slide"
           >
         </div>
         <div class="carousel-item">
           <img
             class="d-block w-100"
-            src="https://picsum.photos/1600/300/?random=3"
+            src="https://picsum.photos/2000/400/?random=3"
             alt="Third slide"
           >
         </div>

@@ -3915,6 +3915,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3924,6 +3933,39 @@ __webpack_require__.r(__webpack_exports__);
     Sideleft: _components_home_Sideleft_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Navbar: _components_home_Navbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Carousel: _components_home_Carousel_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      goTop: false,
+      scrollTop: ""
+    };
+  },
+  methods: {
+    gotop: function gotop() {
+      // console.log('gotop!')
+      var speed = 10;
+      var timer = setInterval(function () {
+        this.scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+        if (this.scrollTop > 0) {
+          this.scrollTop = this.scrollTop - speed > 0 ? this.scrollTop - speed : 0;
+          speed += 20;
+          window.scrollTo(0, this.scrollTop);
+        } else {
+          clearInterval(timer);
+        }
+      }, 16);
+    },
+    showTop: function showTop() {
+      this.scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; // console.log(document.documentElement.scrollTop);
+      // console.log(window.pageYOffset);
+
+      if (this.scrollTop > 200) {
+        this.goTop = true;
+      } else {
+        this.goTop = false;
+      }
+    }
   }
 });
 
@@ -107434,7 +107476,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "d-block w-100",
                 attrs: {
-                  src: "https://picsum.photos/1600/300/?random=1",
+                  src: "https://picsum.photos/2000/400/?random=1",
                   alt: "First slide"
                 }
               })
@@ -107444,7 +107486,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "d-block w-100",
                 attrs: {
-                  src: "https://picsum.photos/1600/300/?random=2",
+                  src: "https://picsum.photos/2000/400/?random=2",
                   alt: "Second slide"
                 }
               })
@@ -107454,7 +107496,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "d-block w-100",
                 attrs: {
-                  src: "https://picsum.photos/1600/300/?random=3",
+                  src: "https://picsum.photos/2000/400/?random=3",
                   alt: "Third slide"
                 }
               })
@@ -108098,7 +108140,18 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid", attrs: { id: "app" } },
+    {
+      directives: [
+        {
+          name: "scroll",
+          rawName: "v-scroll",
+          value: _vm.showTop,
+          expression: "showTop"
+        }
+      ],
+      staticClass: "container-fluid",
+      attrs: { id: "app" }
+    },
     [
       _c("Navbar"),
       _vm._v(" "),
@@ -108107,7 +108160,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-lg-11 col-sm-12" },
+          { staticClass: "col-lg-10 col-sm-12" },
           [
             _c("Carousel"),
             _vm._v(" "),
@@ -108123,6 +108176,17 @@ var render = function() {
           1
         )
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          ref: "toolbarChat",
+          staticClass: "gotop",
+          class: _vm.goTop ? "topblock" : "",
+          on: { click: _vm.gotop }
+        },
+        [_c("p", [_vm._v("↑")])]
+      ),
       _vm._v(" "),
       _c("Sideleft")
     ],
@@ -123618,6 +123682,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(element_ui__WEBPACK_IMPORTED_MODULE_5___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.directive('scroll', {
+  bind: function bind(el, binding) {
+    window.addEventListener('scroll', function () {
+      var fnc = binding.value;
+      fnc(el);
+    });
+  }
+});
 moment__WEBPACK_IMPORTED_MODULE_7___default.a.locale('zh-tw');
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: _routes_js__WEBPACK_IMPORTED_MODULE_3__["default"]

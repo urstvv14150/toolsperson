@@ -11,6 +11,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(VueRouter)
 Vue.use(ElementUi)
+Vue.directive('scroll', {
+    bind: function(el, binding) {
+        window.addEventListener('scroll', () => {
+            let fnc = binding.value
+            fnc(el)
+        })
+    }
+})
+
 moment.locale('zh-tw')
 
 const router = new VueRouter({
