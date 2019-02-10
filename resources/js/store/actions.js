@@ -3,3 +3,6 @@ export const CONTENTS_READ = context => {
         context.commit('getcontents', res.data)
     })
 }
+export const Login = (context, status) => {
+    context.commit('login', status)
+}

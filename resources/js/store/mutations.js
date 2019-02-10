@@ -1,7 +1,8 @@
 import moment from 'moment'
 
 export const state = {
-    contents: []
+    contents: [],
+    loginstatus: false
 }
 
 export const mutations = {
@@ -19,5 +20,8 @@ export const mutations = {
         state.contents = state.contents.reverse()
         state.contents.push(data)
         state.contents = state.contents.reverse()
+    },
+    login(state, data) {
+        state.loginstatus = data
     }
 }

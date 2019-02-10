@@ -7,7 +7,7 @@ import store from './store/index.js'
 import ElementUi from 'element-ui'
 import moment from 'moment'
 import 'element-ui/lib/theme-chalk/index.css'
-
+moment.locale('zh-tw')
 Vue.use(VueRouter)
 Vue.use(ElementUi)
 Vue.directive('scroll', {
@@ -19,10 +19,22 @@ Vue.directive('scroll', {
     }
 })
 
-moment.locale('zh-tw')
-
 const router = new VueRouter({
     routes
+})
+
+router.beforeEach((to, from, next) => {
+    // let loginstatus = window.localStorage.getItem('loginstatus')
+    console.log('loginstatus : ' + store.state.loginstatus)
+    if (store.state.loginstatus) {
+        next()
+    } else {
+        if (to.meta.requireAuth) {
+            next()
+        } else {
+            next('/login')
+        }
+    }
 })
 
 const app = new Vue({
