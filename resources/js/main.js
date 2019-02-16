@@ -24,9 +24,9 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    // let loginstatus = window.localStorage.getItem('loginstatus')
-    console.log('loginstatus : ' + store.state.loginstatus)
-    if (store.state.loginstatus) {
+    let loginstatus = window.localStorage.getItem('loginstatus')
+    console.log('loginstatus : ' + loginstatus)
+    if (loginstatus) {
         next()
     } else {
         if (to.meta.requireAuth) {

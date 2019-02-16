@@ -3530,10 +3530,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
-      this.$store.dispatch("Login", true);
-      console.log(this.$route.meta.requireAuth);
-      this.$route.meta.requireAuth = false;
-      console.log(this.$route.meta.requireAuth);
+      this.$store.dispatch("Login", true); // console.log(this.$route.meta.requireAuth);
+      // this.$route.meta.requireAuth = false;
+      // console.log(this.$route.meta.requireAuth);
+
+      window.localStorage.setItem("loginstatus", true);
       this.$router.push("/");
     }
   }
@@ -3677,6 +3678,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/main.js */ "./resources/js/main.js");
 //
 //
 //
@@ -3756,7 +3758,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    logout: function logout() {
+      window.localStorage.removeItem("loginstatus");
+      this.$router.push("/login");
+    }
+  }
+});
 
 /***/ }),
 
@@ -108008,7 +108019,56 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _c("li", { staticClass: "nav-item dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link dropdown-toggle",
+                    attrs: {
+                      href: "#",
+                      id: "navbarDropdown",
+                      role: "button",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  },
+                  [_vm._v("\n            幫助\n          ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu",
+                    attrs: { "aria-labelledby": "navbarDropdown" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("聯絡我們")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("刊登辦法")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "dropdown-divider" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "dropdown-item",
+                        attrs: { href: "#" },
+                        on: { click: _vm.logout }
+                      },
+                      [_vm._v("登出")]
+                    )
+                  ]
+                )
+              ])
             ])
           ]
         )
@@ -108047,51 +108107,6 @@ var staticRenderFns = [
         _vm._v("登入/登出"),
         _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item dropdown" }, [
-      _c(
-        "a",
-        {
-          staticClass: "nav-link dropdown-toggle",
-          attrs: {
-            href: "#",
-            id: "navbarDropdown",
-            role: "button",
-            "data-toggle": "dropdown",
-            "aria-haspopup": "true",
-            "aria-expanded": "false"
-          }
-        },
-        [_vm._v("\n            幫助\n          ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "dropdown-menu",
-          attrs: { "aria-labelledby": "navbarDropdown" }
-        },
-        [
-          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-            _vm._v("聯絡我們")
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-            _vm._v("刊登辦法")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "dropdown-divider" }),
-          _vm._v(" "),
-          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-            _vm._v("使用條款")
-          ])
-        ]
-      )
     ])
   }
 ]
@@ -124175,10 +124190,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: _routes_js__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 router.beforeEach(function (to, from, next) {
-  // let loginstatus = window.localStorage.getItem('loginstatus')
-  console.log('loginstatus : ' + _store_index_js__WEBPACK_IMPORTED_MODULE_4__["default"].state.loginstatus);
+  var loginstatus = window.localStorage.getItem('loginstatus');
+  console.log('loginstatus : ' + loginstatus);
 
-  if (_store_index_js__WEBPACK_IMPORTED_MODULE_4__["default"].state.loginstatus) {
+  if (loginstatus) {
     next();
   } else {
     if (to.meta.requireAuth) {

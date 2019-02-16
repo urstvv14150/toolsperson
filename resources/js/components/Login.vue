@@ -48,9 +48,10 @@
     methods: {
       login() {
         this.$store.dispatch("Login", true);
-        console.log(this.$route.meta.requireAuth);
-        this.$route.meta.requireAuth = false;
-        console.log(this.$route.meta.requireAuth);
+        // console.log(this.$route.meta.requireAuth);
+        // this.$route.meta.requireAuth = false;
+        // console.log(this.$route.meta.requireAuth);
+        window.localStorage.setItem("loginstatus", true);
         this.$router.push("/");
       }
     }

@@ -69,7 +69,8 @@
               <a
                 class="dropdown-item"
                 href="#"
-              >使用條款</a>
+                @click='logout'
+              >登出</a>
             </div>
           </li>
         </ul>
@@ -78,5 +79,13 @@
   </div>
 </template>
 <script>
-  export default {};
+  import { router } from "@/main.js";
+  export default {
+    methods: {
+      logout() {
+        window.localStorage.removeItem("loginstatus");
+        this.$router.push("/login");
+      }
+    }
+  };
 </script>
