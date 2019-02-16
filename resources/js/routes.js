@@ -7,21 +7,29 @@ export default [
     },
     {
         path: '/',
-        name: 'search',
-        component: require('@/components/home/Search.vue').default,
-        meta: { requireAuth: false }
-    },
-    {
-        path: '/submit',
-        name: 'submit',
-        component: require('@/components/home/Submit.vue').default,
-        meta: { requireAuth: false }
-    },
-    {
-        path: '/detailshow/:id',
-        name: 'detailshow',
-        component: require('@/components/home/DetailShow.vue').default,
-        meta: { requireAuth: false }
+        name: 'home',
+        component: require('@/components/Home.vue').default,
+        meta: { requireAuth: false },
+        children: [
+            {
+                path: '/',
+                name: 'search',
+                component: require('@/components/home/Search.vue').default,
+                meta: { requireAuth: false }
+            },
+            {
+                path: '/submit',
+                name: 'submit',
+                component: require('@/components/home/Submit.vue').default,
+                meta: { requireAuth: false }
+            },
+            {
+                path: '/detailshow/:id',
+                name: 'detailshow',
+                component: require('@/components/home/DetailShow.vue').default,
+                meta: { requireAuth: false }
+            }
+        ]
     },
     {
         path: '*',
