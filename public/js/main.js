@@ -4020,7 +4020,7 @@ __webpack_require__.r(__webpack_exports__);
         this.loading = true;
         this.input.createdatetime = moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYYMMDD h:mm:ss a");
         this.input.footer = moment__WEBPACK_IMPORTED_MODULE_1___default()(this.input.createdatetime, "YYYYMMDD h:mm:ss a").fromNow();
-        axios.post("http://localhost:8888/alldata", this.input).then(function (res) {
+        axios.post("http://localhost/api/user/submit", this.input).then(function (res) {
           _this.cancelhandler();
 
           _this.loading = false;
@@ -4033,7 +4033,7 @@ __webpack_require__.r(__webpack_exports__);
         }).catch(function (err) {
           console.log("post失敗");
           console.log(err.message);
-        });
+        }); // .post("http://localhost:8888/alldata", this.input)
       } else {
         return;
       }
@@ -123457,7 +123457,8 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['Content-Type'] = 'application/json'; // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
