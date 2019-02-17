@@ -76,7 +76,7 @@
           text: "",
           footer: "",
           createdatetime: "",
-          detial: ""
+          detail: ""
         },
         loading: false
       };
@@ -85,13 +85,13 @@
       submithandler() {
         if (this.input.title && this.input.text && this.input.img) {
           this.loading = true;
-          this.input.createdatetime = moment().format("YYYYMMDD h:mm:ss a");
+          this.input.createdatetime = moment().format("YYYYMMDD HH:mm:ss a");
           this.input.footer = moment(
             this.input.createdatetime,
             "YYYYMMDD h:mm:ss a"
           ).fromNow();
           axios
-            .post("http://localhost/api/user/submit", this.input)
+            .post("/api/user/submit", this.input)
             .then(res => {
               this.cancelhandler();
               this.loading = false;
@@ -99,7 +99,9 @@
               this.$store.commit("setcontents", res.data);
             })
             .catch(err => {
+              console.log(this.input);
               console.log("post失敗");
+              console.log(err);
               console.log(err.message);
             });
           // .post("http://localhost:8888/alldata", this.input)

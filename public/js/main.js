@@ -4007,7 +4007,7 @@ __webpack_require__.r(__webpack_exports__);
         text: "",
         footer: "",
         createdatetime: "",
-        detial: ""
+        detail: ""
       },
       loading: false
     };
@@ -4018,9 +4018,9 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.input.title && this.input.text && this.input.img) {
         this.loading = true;
-        this.input.createdatetime = moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYYMMDD h:mm:ss a");
+        this.input.createdatetime = moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYYMMDD HH:mm:ss a");
         this.input.footer = moment__WEBPACK_IMPORTED_MODULE_1___default()(this.input.createdatetime, "YYYYMMDD h:mm:ss a").fromNow();
-        axios.post("http://localhost/api/user/submit", this.input).then(function (res) {
+        axios.post("/api/user/submit", this.input).then(function (res) {
           _this.cancelhandler();
 
           _this.loading = false;
@@ -4031,7 +4031,9 @@ __webpack_require__.r(__webpack_exports__);
 
           _this.$store.commit("setcontents", res.data);
         }).catch(function (err) {
+          console.log(_this.input);
           console.log("post失敗");
+          console.log(err);
           console.log(err.message);
         }); // .post("http://localhost:8888/alldata", this.input)
       } else {
