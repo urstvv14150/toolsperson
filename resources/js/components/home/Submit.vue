@@ -85,7 +85,7 @@
       submithandler() {
         if (this.input.title && this.input.text && this.input.img) {
           this.loading = true;
-          this.input.createdatetime = moment().format("YYYYMMDD HH:mm:ss a");
+          this.input.createdatetime = moment().format("YYYYMMDD h:mm:ss a");
           this.input.footer = moment(
             this.input.createdatetime,
             "YYYYMMDD h:mm:ss a"

@@ -4018,7 +4018,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.input.title && this.input.text && this.input.img) {
         this.loading = true;
-        this.input.createdatetime = moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYYMMDD HH:mm:ss a");
+        this.input.createdatetime = moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYYMMDD h:mm:ss a");
         this.input.footer = moment__WEBPACK_IMPORTED_MODULE_1___default()(this.input.createdatetime, "YYYYMMDD h:mm:ss a").fromNow();
         axios.post("/api/user/submit", this.input).then(function (res) {
           _this.cancelhandler();
