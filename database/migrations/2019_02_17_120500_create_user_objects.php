@@ -20,7 +20,7 @@ class CreateUserObjects extends Migration
             $table->string('img')->default('');
             $table->string('footer')->default('');
             $table->string('detail')->default('');
-            $table->dateTime('createdatetime');
+            $table->string('createdatetime')->default('');
             $table->timestamps();
         });
     }

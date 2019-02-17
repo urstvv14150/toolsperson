@@ -38,7 +38,7 @@
             id="exampleFormControlTextarea1"
             rows="5"
             placeholder="詳細內容"
-            v-model="input.detial"
+            v-model="input.detail"
           ></textarea>
         </div>
         <label

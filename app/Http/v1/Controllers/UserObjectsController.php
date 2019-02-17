@@ -20,7 +20,7 @@ class UserObjectsController
 
     public function submitObject(Request $request){
     try{
-        Log::info('request => ' . print_r($request->input->detail,true));
+        
         $this->UserObjectRepository->create([
             'title' => $request->title,
             'text' => $request->text,
@@ -28,7 +28,7 @@ class UserObjectsController
             'footer' => $request->footer,
             'detail' => $request->detail,
             'createdatetime' => $request->createdatetime,
-        ]);
+        ]);        
         return $request;
     } catch(Exception $e) {
         Log::error('error :' . $e);

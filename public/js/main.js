@@ -108413,8 +108413,8 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.input.detial,
-                expression: "input.detial"
+                value: _vm.input.detail,
+                expression: "input.detail"
               }
             ],
             staticClass: "form-control",
@@ -108423,13 +108423,13 @@ var render = function() {
               rows: "5",
               placeholder: "詳細內容"
             },
-            domProps: { value: _vm.input.detial },
+            domProps: { value: _vm.input.detail },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.$set(_vm.input, "detial", $event.target.value)
+                _vm.$set(_vm.input, "detail", $event.target.value)
               }
             }
           })
@@ -123459,7 +123459,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['Content-Type'] = 'application/json'; // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['Content-Type'] = 'application/json'; // window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
