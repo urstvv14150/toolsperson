@@ -19,9 +19,14 @@
   </div>
 </template>
 <style scope>
+  html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
   .loginpage {
     width: 1000px;
-    height: 1000px;
     background-color: lavender;
     position: absolute;
     left: 0;
