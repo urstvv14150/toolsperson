@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="container-fluid"
-    id="app"
-  >
+  <div id="app">
     <transition name="fade">
       <router-view></router-view>
     </transition>

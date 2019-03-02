@@ -1,5 +1,8 @@
 <template>
-  <div v-scroll="showTop">
+  <div
+    class="container-fluid"
+    v-scroll="showTop"
+  >
     <Navbar></Navbar>
     <div class="row">
       <div class="col-lg-1 col-sm-0">
