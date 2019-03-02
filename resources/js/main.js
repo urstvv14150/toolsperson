@@ -4,9 +4,11 @@ import VueRouter from 'vue-router'
 import App from './layouts/App.vue'
 import routes from './routes.js'
 import store from './store/index.js'
+import 'normalize.css/normalize.css'
 import ElementUi from 'element-ui'
-import moment from 'moment'
 import 'element-ui/lib/theme-chalk/index.css'
+import moment from 'moment'
+
 moment.locale('zh-tw')
 Vue.use(VueRouter)
 Vue.use(ElementUi)
