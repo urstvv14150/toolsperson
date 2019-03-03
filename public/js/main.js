@@ -3522,6 +3522,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -10194,7 +10206,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nhtml {\n  height: 100%;\n}\nbody {\n  height: 100%;\n}\n#app {\n  height: 100%;\n}\n.el-container {\n  height: 100%;\n}\n.el-header,\n.el-footer {\n  background-color: #b3c0d1;\n  color: #333;\n  text-align: center;\n  line-height: 60px;\n}\n.el-main {\n  background-color: #e9eef3;\n  color: #333;\n  display: flex !important;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, "\nhtml {\n  height: 100%;\n}\nbody {\n  height: 100%;\n}\n#app {\n  height: 100%;\n}\n.el-container {\n  height: 100%;\n}\n.el-header,\n.el-footer {\n  background-color: #b3c0d1;\n  color: #333;\n  text-align: center;\n  line-height: 60px;\n}\n.el-main {\n  background-color: #e9eef3;\n  color: #333;\n  display: flex !important;\n  justify-content: center;\n  align-items: center;\n}\n.logintitle {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n", ""]);
 
 // exports
 
@@ -107954,7 +107966,19 @@ var render = function() {
     [
       _c("el-header", [_vm._v("Header")]),
       _vm._v(" "),
-      _c("el-main", [_c("div", [_vm._v("Main")])]),
+      _c("el-main", [
+        _c("div", { staticClass: "logintitle" }, [
+          _c("div", [_vm._v("登入")]),
+          _vm._v(" "),
+          _c("div", [_vm._v("帳號")]),
+          _vm._v(" "),
+          _c("div", [_c("input", { attrs: { type: "text" } })]),
+          _vm._v(" "),
+          _c("div", [_vm._v("密碼")]),
+          _vm._v(" "),
+          _c("div", [_c("input", { attrs: { type: "text" } })])
+        ])
+      ]),
       _vm._v(" "),
       _c("el-footer", [_vm._v("Footer")])
     ],

@@ -2,7 +2,13 @@
   <el-container>
     <el-header>Header</el-header>
     <el-main>
-      <div>Main</div>
+      <div class="logintitle">
+        <div>登入</div>
+        <div>帳號</div>
+        <div><input type="text"></div>
+        <div>密碼</div>
+        <div><input type="text"></div>
+      </div>
     </el-main>
     <el-footer>Footer</el-footer>
   </el-container>
@@ -33,6 +39,12 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
+  }
+  .logintitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 </style>
 <script>
