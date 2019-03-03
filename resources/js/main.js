@@ -1,5 +1,6 @@
 require('./bootstrap')
 import Vue from 'vue'
+import Cookies from 'js-cookie'
 import VueRouter from 'vue-router'
 import App from './layouts/App.vue'
 import routes from './routes.js'
