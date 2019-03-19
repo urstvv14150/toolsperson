@@ -91,7 +91,7 @@
             "YYYYMMDD h:mm:ss a"
           ).fromNow();
           axios
-            .post("/api/user/submit", this.input)
+            .post("http://localhost:8888/alldata", this.input)
             .then(res => {
               this.cancelhandler();
               this.loading = false;
@@ -105,6 +105,7 @@
               console.log(err.message);
             });
           // .post("http://localhost:8888/alldata", this.input)
+          // .post("/api/user/submit", this.input)
         } else {
           return;
         }
