@@ -32,6 +32,12 @@ export default [{
                 name: 'register',
                 component: require('@/components/home/register.vue').default,
                 meta: { requireAuth: false }
+            },
+            {
+                path: '/user_profile',
+                name: 'user_profile',
+                component: require('@/components/home/user_profile.vue').default,
+                meta: { requireAuth: false }
             }
         ]
     },

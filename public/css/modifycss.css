@@ -1,35 +1,44 @@
 .mb {
     margin-bottom: 20px;
 }
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 6%;
 }
+
 .dropdown-menu {
     left: -100px;
 }
+
 .card-img-top {
     width: auto;
     max-width: 100%;
     display: block;
     margin: auto;
 }
+
 .card-deck .card {
     -ms-flex: 0 0 30%;
     flex: 0 0 28%;
     margin-bottom: 35px;
     transition: 0.5s;
 }
+
 .card:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);
 }
-.side_leftitem > div {
-    display: none; /*怪怪的*/
+
+.side_leftitem>div {
+    display: none;
+    /*怪怪的*/
 }
+
 .card-footer {
     text-align: center;
 }
+
 .gotop {
     cursor: pointer;
     width: 20px;
@@ -50,18 +59,22 @@
     opacity: 0;
     transition: 0.5s;
 }
+
 .topblock {
     opacity: 1;
 }
+
 .alltocenter {
     display: flex;
     justify-content: center;
 }
+
 .alltocentercolumn {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 @media screen and (max-width: 500px) {
     .wantdoit {
         display: flex;
@@ -69,6 +82,7 @@
         align-items: center;
     }
 }
+
 @media screen and (min-width: 1280px) {
     .gotop {
         line-height: 30px;
@@ -80,10 +94,9 @@
     .side_left {
         position: fixed;
         width: 100px;
-        height: 800px;
-        background-color: lavender;
+        height: 500px;
         top: 100px;
-        left: 10px;
+        left: -10px;
         display: block;
         border-radius: 10px;
         display: flex;
@@ -91,6 +104,7 @@
         justify-content: space-around;
         /*border: 1px solid black;     */
         overflow: hidden;
+        opacity: 0.7;
     }
     .side_leftitem {
         display: flex;
@@ -109,10 +123,11 @@
         background-color: rgba(235, 235, 235, 0.5);
         cursor: pointer;
     }
-    .side_leftitem > div {
-        display: block; /*怪怪的*/
+    .side_leftitem>div {
+        display: block;
+        /*怪怪的*/
     }
-    .side_leftitem + .side_leftitem {
+    .side_leftitem+.side_leftitem {
         margin-top: 10px;
     }
 }

@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 Route::group(['prefix' => 'user'], function(){
-    Route::post('submit', 'UserObjectsController@submitObject');
+    Route::post('/submit', 'UserObjectsController@submitObject');
+    Route::post('/userdata', 'UserDataController@create');
 });
     

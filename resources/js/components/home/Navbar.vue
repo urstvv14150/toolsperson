@@ -31,6 +31,12 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
+              to="/user_profile"              
+            >name</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
               to="/register"              
             >註冊</router-link>
           </li>

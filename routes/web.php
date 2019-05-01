@@ -14,3 +14,6 @@
 Route::get('/{any}', function () {
     return view('app');
 })->where('any','.*');
+
+// Route::post('/userdata', 'UserDataController@store');
+Route::post('/userdata', 'UserDataController@create');

@@ -16,7 +16,7 @@
             class="form-control"                     
             placeholder="Enter email"     
             v-model="email"
-            :class="{'input': true, 'is-danger': errors.has('email') }"                   
+                               
           >                     
           <div class="alert alert-danger"
             v-show="errors.has('email')"
@@ -48,7 +48,7 @@
               name="password_confirmation"
               type="password"
               class="form-control"          
-              placeholder="Password Again"         
+              placeholder="Password Again"                     
             >
             <div class="alert alert-danger"
               v-show="errors.has('password_confirmation')"
@@ -64,7 +64,8 @@
               name="name"
               type="name"
               class="form-control"            
-              placeholder="name"                       
+              placeholder="name"
+              v-model="name"                       
             >
             <div class="alert alert-danger"
               v-show="errors.has('name')"
@@ -79,7 +80,8 @@
               name="phone"
               type="tel"
               class="form-control"            
-              placeholder="Phone"                                               
+              placeholder="Phone"
+              v-model="phone"                                               
             >
           
           <div class="alert alert-danger"
@@ -112,17 +114,32 @@
 <script>
 export default {  
   data: () => ({
+
     email: '',
     name: '',
+    password: '',
     phone: '',
   }),
   methods: {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          
-          alert('登入成功!');
-          return;
+          axios.post('/userdata', {
+            email: this.email,
+            name: this.name,
+            password: this.password,
+            phone: this.phone,
+            
+          })
+          .then(function (response){
+            console.log(response);
+          })
+          .catch(function(error){
+            console.log(error.response);
+          })
+
+          alert('註冊成功!');
+          return
         }
 
         alert('請確認格式正確!');
